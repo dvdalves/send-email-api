@@ -1,9 +1,8 @@
-﻿using EnviarEmailAPI.Models;
+﻿using Api.Models;
 
-namespace EnviarEmailAPI.Interfaces
+namespace Api.Interfaces;
+
+public interface IEmailService
 {
-    public interface IEmailService
-    {
-        Task EnviarEmail(Email email);
-    }
+    Task SendEmail(Email email);
 }

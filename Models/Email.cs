@@ -1,9 +1,8 @@
-﻿namespace EnviarEmailAPI.Models
+﻿namespace Api.Models;
+
+public class Email
 {
-    public class Email
-    {
-        public required string Destinatario { get; set; }
-        public required string Assunto { get; set; }
-        public required string Mensagem { get; set; }
-    }
+    public required string Receiver { get; set; }
+    public required string Subject { get; set; }
+    public required string Message { get; set; }
 }

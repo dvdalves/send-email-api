@@ -1,27 +1,24 @@
-﻿using EnviarEmailAPI.Interfaces;
-using EnviarEmailAPI.Models;
+﻿using Api.Interfaces;
+using Api.Models;
 using System.Net;
 using System.Net.Mail;
 
-namespace EnviarEmailAPI.Services
+namespace Api.Services;
+
+public class EmailService : IEmailService
 {
-    public class EmailService : IEmailService
+    public async Task SendEmail(Email email)
     {
-        public async Task EnviarEmail(Email email)
-        {
-            // Configure o email e a senha do remetente
-            var mail = "exemplo@outlook.com.br";
-            var pw = "exemplosenha";
 
-            using (var client = new SmtpClient("smtp-mail.outlook.com", 587))
-            {
-                client.EnableSsl = true;
-                client.Credentials = new NetworkCredential(mail, pw);
+        var mail = "example@outlook.com.br";
+        var pw = "examplePassword";
 
-                var mailMessage = new MailMessage(from: mail, to: email.Destinatario, subject: email.Assunto, body: email.Mensagem);
+        using var client = new SmtpClient("smtp-mail.outlook.com", 587);
+        client.EnableSsl = true;
+        client.Credentials = new NetworkCredential(mail, pw);
 
-                await client.SendMailAsync(mailMessage);
-            }
-        }
+        var mailMessage = new MailMessage(from: mail, to: email.Receiver, subject: email.Subject, body: email.Message);
+
+        await client.SendMailAsync(mailMessage);
     }
 }

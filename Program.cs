@@ -1,5 +1,5 @@
-using EnviarEmailAPI.Interfaces;
-using EnviarEmailAPI.Services;
+using Api.Interfaces;
+using Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
