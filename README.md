@@ -4,6 +4,6 @@ This .NET API allows sending emails using the SMTP protocol in a simple and effi
 
 ## Technologies Used
 
-* .NET 8
+* .NET 9
 * C#
 * SMTP
