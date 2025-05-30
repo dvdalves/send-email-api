@@ -1,7 +1,9 @@
-# API de Envio de E-mail em .NET
-Esta API em .NET permite enviar e-mails utilizando o protocolo SMTP de forma simples e eficiente.
+# Email Sending API in .NET
 
-## Tecnologias Utilizadas
-- .NET 8
-- C#
-- SMTP
+This .NET API allows sending emails using the SMTP protocol in a simple and efficient way.
+
+## Technologies Used
+
+* .NET 8
+* C#
+* SMTP
